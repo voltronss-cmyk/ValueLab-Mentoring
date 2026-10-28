@@ -1,8 +1,8 @@
 # ValueLab — Prototipe Platform Mentoring Karir Berbasis AI (DEMO)
 
-Prototipe situs statis (HTML + CSS + JavaScript murni).
+Prototipe situs statis
 
-> ⚠️ **Status demo:** AI belum terintegrasi. Semua grafik, profil radar, dan hasil adalah data contoh. Login hanya simulasi di sisi browser dan **tidak aman** untuk data nyata.
+> ⚠️ **Status demo:** AI belum terintegrasi. Semua grafik, profil radar, dan hasil adalah data contoh.
 
 ## Struktur
 ```
