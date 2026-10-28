@@ -213,7 +213,6 @@
     });
   }
 
-  // ---- Pulihkan sesi (per tab) ----
   try {
     var saved = sessionStorage.getItem(SESSION_KEY);
     if (saved && ACCOUNTS[saved]) enterApp(saved);
