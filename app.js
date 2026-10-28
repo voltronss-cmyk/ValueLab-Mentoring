@@ -80,9 +80,9 @@
 
   // ---- Promo modal ----
   var PLANS = {
-    Basic: ['Materi bimbingan tingkat lanjut', 'Akses pada membership', 'Dukungan via email'],
-    Plus: ['Simulasi tanpa batas', 'Laporan Live Cognitive Radar Profile Melalui Email', 'Prioritas dukungan'],
-    Premium: ['Semua fitur Plus', 'Bimbingan CV/Portofolio Standar Internasional', 'Simulasi wawancara', 'Pendampingan karir intensif']
+    Advanced_Pathfinder: ['Materi bimbingan tingkat lanjut', 'Akses pada membership', 'Dukungan via email'],
+    Membership_Plus: ['Simulasi tanpa batas', 'Laporan Live Cognitive Radar Profile Melalui Email', 'Prioritas dukungan'],
+    Membership_Premium: ['Semua fitur Plus', 'Bimbingan CV/Portofolio Standar Internasional', 'Simulasi wawancara', 'Pendampingan karir intensif']
   };
   function openModal(title, html) {
     $('#modal-title').textContent = title;
@@ -93,7 +93,7 @@
     var p = e.target.closest('[data-promo]');
     if (p) {
       var k = p.getAttribute('data-promo');
-      openModal('Membership ' + k,
+      openModal(k.replaceAll("_"," "),
         '<ul>' + PLANS[k].map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>' +
         '<p class="muted"><em>Demo: informasi dan harga membership belum final.</em></p>');
     }
