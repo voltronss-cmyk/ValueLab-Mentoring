@@ -172,4 +172,5 @@ textarea{resize:vertical}
   .mentor-layout{grid-template-columns:1fr}
   .topbar{padding:10px 14px}
   .hello{display:none}
+  .demo-accounts{transform: scale(0.5)}
 }
