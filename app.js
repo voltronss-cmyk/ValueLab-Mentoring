@@ -80,9 +80,9 @@
 
   // ---- Promo modal ----
   var PLANS = {
-    Basic: ['Materi bimbingan dasar', '1 simulasi business case / bulan', 'Dukungan via email'],
-    Plus: ['Simulasi tanpa batas', 'Laporan Live Cognitive Radar Profile', 'Tanya jawab dengan mentor', 'Prioritas dukungan'],
-    Premium: ['Semua fitur Plus', 'Review CV & portofolio', 'Simulasi wawancara', 'Pendampingan karir intensif']
+    Basic: ['Materi bimbingan tingkat lanjut', 'Akses pada membership', 'Dukungan via email'],
+    Plus: ['Simulasi tanpa batas', 'Laporan Live Cognitive Radar Profile Melalui Email', 'Prioritas dukungan'],
+    Premium: ['Semua fitur Plus', 'Bimbingan CV/Portofolio Standar Internasional', 'Simulasi wawancara', 'Pendampingan karir intensif']
   };
   function openModal(title, html) {
     $('#modal-title').textContent = title;
