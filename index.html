@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValueLab — Empower &amp; Transform</title>
+  <meta name="description" content="Prototipe platform mentoring karir berbasis AI (demo).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Simbol logo (SVG) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vl-mark" viewBox="0 0 120 110">
+    <polygon points="4,30 50,30 72,84 62,100 40,60 20,44" fill="#0a3560"/>
+    <polygon points="4,30 40,30 66,86 56,86" fill="#12a8e0"/>
+    <polygon points="80,6 104,2 104,16 86,24" fill="#95a0a3"/>
+    <polygon points="72,26 98,20 98,34 78,42" fill="#12a8e0"/>
+    <polygon points="64,46 88,40 88,52 68,60" fill="#0d86b8"/>
+    <path d="M84 46h14v22l14 28c3 6 0 12-7 12H80c-7 0-10-6-7-12l11-24z" fill="none" stroke="#0a3560" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M80 92l8-14c4-1 10-4 16-6l8 20z" fill="#0a3560"/>
+  </symbol>
+</svg>
+
+<!-- BANNER DEMO (selalu tampil) -->
+<div class="demo-banner" role="note">
+  <strong>MODE DEMO</strong> — Platform ini adalah prototipe. AI belum terintegrasi dan seluruh data yang tampil bersifat contoh.
+</div>
+
+<!-- ========== HALAMAN LOGIN ========== -->
+<section id="view-login" class="view active">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="brand brand-center">
+        <svg class="brand-mark" aria-hidden="true"><use href="#vl-mark"/></svg>
+        <div class="brand-name">ValueLab</div>
+        <div class="brand-tag">Empower &amp; Transform</div>
+      </div>
+      <h1 class="login-title">Masuk ke Platform Mentoring</h1>
+      <p class="login-sub">Gunakan username dan password yang diberikan oleh mentor Anda.</p>
+
+      <form id="login-form" autocomplete="off" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Masukkan username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Masukkan password" required>
+        <div id="login-error" class="form-error" role="alert" hidden></div>
+        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+      </form>
+
+      <div class="demo-accounts">
+        <div class="demo-accounts-title">Akun Demo (untuk keperluan penilaian)</div>
+        <table>
+          <thead><tr><th>Username</th><th>Password</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><code>demo1</code></td><td><code>valuelab123</code></td><td><button class="btn btn-ghost btn-sm" data-fill="demo1|valuelab123">Isi otomatis</button></td></tr>
+            <tr><td><code>demo2</code></td><td><code>valuelab456</code></td><td><button class="btn btn-ghost btn-sm" data-fill="demo2|valuelab456">Isi otomatis</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== APLIKASI (setelah login) ========== -->
+<div id="app" hidden>
+  <header class="topbar">
+    <div class="brand brand-inline">
+      <svg class="brand-mark" aria-hidden="true"><use href="#vl-mark"/></svg>
+      <div>
+        <div class="brand-name">ValueLab</div>
+        <div class="brand-tag">Empower &amp; Transform</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="hello">Halo, <strong id="user-name">Peserta</strong></span>
+      <button id="btn-logout" class="btn btn-outline btn-sm">Keluar</button>
+    </div>
+  </header>
+
+  <!-- ===== MENU UTAMA ===== -->
+  <main id="view-home" class="view active container">
+    <div class="welcome">
+      <h2>Menu Utama</h2>
+      <p>Pilih aktivitas untuk melanjutkan perjalanan karir Anda.</p>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-card" data-go="simulation">
+        <span class="menu-icon">📊</span>
+        <span class="menu-title">Simulasi Business Case</span>
+        <span class="menu-desc">Kerjakan kasus singkat. Hasilnya akan dianalisis AI untuk melihat pola pikir Anda.</span>
+        <span class="menu-cta">Mulai simulasi →</span>
+      </button>
+      <button class="menu-card" data-go="mentoring">
+        <span class="menu-icon">🧭</span>
+        <span class="menu-title">Bimbingan AI</span>
+        <span class="menu-desc">Materi terarah dengan konsep Live Cognitive Radar Profile.</span>
+        <span class="menu-cta">Buka bimbingan →</span>
+      </button>
+    </div>
+
+    <!-- Promo -->
+    <h3 class="section-title">Promo &amp; Membership</h3>
+    <div class="promo-grid">
+      <article class="promo">
+        <span class="promo-badge">Iklan</span>
+        <h4>Membership Basic</h4>
+        <p>Akses materi bimbingan dasar dan 1 simulasi business case per bulan.</p>
+        <button class="btn btn-outline btn-sm" data-promo="Basic">Lihat detail</button>
+      </article>
+      <article class="promo promo-featured">
+        <span class="promo-badge">Iklan · Terpopuler</span>
+        <h4>Membership Plus</h4>
+        <p>Simulasi tanpa batas, laporan profil kognitif, dan sesi tanya jawab dengan mentor.</p>
+        <button class="btn btn-primary btn-sm" data-promo="Plus">Lihat detail</button>
+      </article>
+      <article class="promo">
+        <span class="promo-badge">Iklan</span>
+        <h4>Membership Premium</h4>
+        <p>Pendampingan karir intensif, review CV, dan simulasi wawancara bersama mentor.</p>
+        <button class="btn btn-outline btn-sm" data-promo="Premium">Lihat detail</button>
+      </article>
+    </div>
+
+    <!-- Tahukah kamu -->
+    <div class="didyouknow">
+      <div class="dyk-label">💡 Tahukah Kamu?</div>
+      <p id="dyk-text"></p>
+      <button id="dyk-next" class="btn btn-ghost btn-sm">Fakta lainnya</button>
+    </div>
+
+    <!-- Grafik -->
+    <h3 class="section-title">Perkembangan Anda</h3>
+    <div class="notice">Grafik ini adalah contoh tampilan data perkembangan pengguna, bukan data asli (demo).</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h4>Kesiapan Mental</h4>
+        <div class="chart-box"><canvas id="chart-mental"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>Materi Dikuasai (Keputusan AI)</h4>
+        <div class="chart-box"><canvas id="chart-materi"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>Skor Kompetensi</h4>
+        <div class="chart-box"><canvas id="chart-skill"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>Kecocokan Arah Karir</h4>
+        <div class="chart-box"><canvas id="chart-karir"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Feedback & CS -->
+    <div class="bottom-grid">
+      <div class="card">
+        <h3>Kotak Feedback</h3>
+        <form id="feedback-form">
+          <label for="fb-type">Kategori</label>
+          <select id="fb-type">
+            <option>Saran</option><option>Kendala teknis</option><option>Materi bimbingan</option><option>Lainnya</option>
+          </select>
+          <label for="fb-text">Pesan Anda</label>
+          <textarea id="fb-text" rows="4" placeholder="Tulis masukan Anda di sini…" required></textarea>
+          <button class="btn btn-primary" type="submit">Kirim Feedback</button>
+          <div id="fb-ok" class="form-ok" hidden>Terima kasih! (Demo: feedback belum benar-benar tersimpan.)</div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Customer Service</h3>
+        <p class="muted">Butuh bantuan? Hubungi tim kami. <em>(Nomor demo)</em></p>
+        <ul class="cs-list">
+          <li><span>WhatsApp</span> <a href="https://wa.me/6285333220052" target="_blank" rel="noopener">+62 853-3322-0052</a></li>
+          <li><span>Telepon</span> <a href="tel:+6285333220052">+62 853-3322-0052</a></li>
+          <li><span>Jam layanan</span> Senin–Jumat, 08.00–20.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== SIMULASI ===== -->
+  <main id="view-simulation" class="view container narrow">
+    <button class="back-link" data-go="home">← Kembali ke Menu Utama</button>
+    <div class="card">
+      <div class="sim-head">
+        <h2>Simulasi Business Case</h2>
+        <span id="sim-progress" class="pill">Pertanyaan 1 / 3</span>
+      </div>
+      <div class="progress"><div id="sim-bar" class="progress-bar"></div></div>
+
+      <div class="case-box">
+        <strong>Kasus:</strong> Sebuah kedai kopi lokal mengalami penurunan penjualan 20% dalam tiga bulan terakhir
+        setelah dua kompetitor baru dibuka di dekatnya. Anda ditunjuk sebagai konsultan untuk membantu pemilik mengambil keputusan.
+      </div>
+
+      <form id="sim-form">
+        <label id="sim-question" for="sim-answer"></label>
+        <textarea id="sim-answer" rows="6" placeholder="Tulis jawaban Anda…" required></textarea>
+        <div class="sim-actions">
+          <button type="button" id="sim-prev" class="btn btn-outline">Sebelumnya</button>
+          <button type="submit" id="sim-next" class="btn btn-primary">Lanjut</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== SIMULASI SELESAI ===== -->
+  <main id="view-done" class="view container narrow">
+    <div class="card done-card">
+      <div class="done-icon">✓</div>
+      <h2>Pengerjaan sudah selesai</h2>
+      <p class="muted">Karena platform ini adalah demo, hasil analisis AI belum dapat ditampilkan</p>
+      <button class="btn btn-primary" data-go="home">Kembali</button>
+    </div>
+  </main>
+
+  <!-- ===== BIMBINGAN AI ===== -->
+  <main id="view-mentoring" class="view container">
+    <button class="back-link" data-go="home">← Kembali ke Menu Utama</button>
+    <div class="welcome">
+      <h2>Bimbingan AI</h2>
+      <p>Materi terarah dengan konsep <strong>Live Cognitive Radar Profile</strong>: profil kognitif Anda dipetakan secara berkelanjutan agar bimbingan sesuai latar belakang dan tujuan karir.</p>
+    </div>
+    <div class="notice">Demo: AI belum terintegrasi. Radar di bawah memakai data contoh, bukan hasil analisis asli.</div>
+
+    <div class="mentor-layout">
+      <div class="card">
+        <h3>Live Cognitive Radar Profile</h3>
+        <div class="chart-box tall"><canvas id="chart-radar"></canvas></div>
+      </div>
+      <div class="module-list" id="module-list"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 ValueLab — Empower &amp; Transform · Prototipe demo, bukan produk final.
+  </footer>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Tutup">×</button>
+    <h3 id="modal-title"></h3>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/app.js"></script> 
+</body>
+</html>
